@@ -1,6 +1,6 @@
 <div class='container'>
     <h2 class='text-center display-5 mt-4'>Connectez-vous</h2>
-    <form [formGroup]="signupForm" (ngSubmit)="onSubmitForm()">
+    <form [formGroup]="signupForm" (ngSubmit)="onSubmitForm()" *ngIf='!loading'>
         <div class="form-group">
             <label for="email">Email</label>
             <input type="email" class="form-control" id="email" formControlName="email">
@@ -10,6 +10,6 @@
             <input type="password" class="form-control" id="password" formControlName="password">
         </div>
         <button type='submit' class="btn btn-primary" [disabled]="signupForm.invalid">Valider</button>
-        <p class="text-danger" >{{ errorMsg }}</p>
+        <p class="text-danger" *ngIf='errorMsg'>{{ errorMsg }}</p>
     </form>
 </div>

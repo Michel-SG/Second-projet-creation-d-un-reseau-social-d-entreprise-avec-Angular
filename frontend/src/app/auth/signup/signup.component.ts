@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 export class SignupComponent implements OnInit {
 
   signupForm: FormGroup;
-  //loading: boolean;
+  loading: boolean;
   errorMsg: string;
 
   constructor(private formBuilder: FormBuilder,
@@ -42,7 +42,7 @@ export class SignupComponent implements OnInit {
       this.router.navigate(['/auth', 'signin']);
     })
     .catch((error)=>{
-      //this.loading = false;
+      this.loading = false;
       console.error(error);
       this.errorMsg = error.message;
       

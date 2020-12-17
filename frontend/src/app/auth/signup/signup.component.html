@@ -1,6 +1,6 @@
 <div class='container'>
-    <h2 class='text-center display-5 mt-4'>signup works!</h2>
-    <form [formGroup]="signupForm" (ngSubmit)="onSubmitForm()">
+    <h2 class='text-center display-5 mt-4'>Inscription</h2>
+    <form [formGroup]="signupForm" (ngSubmit)="onSubmitForm()" *ngIf='!loading'>
         <div class="form-group">
             <label for="pseudo">Pseudo</label>
             <input type="text" class="form-control" id="pseudo" formControlName="pseudo">
@@ -24,6 +24,6 @@
             </select>
         </div>
         <button type='submit' class="btn btn-primary" [disabled]="signupForm.invalid">Valider</button>
-        <p class="text-danger" >{{ errorMsg }}</p>
+        <p class="text-danger" *ngIf='errorMsg'>{{ errorMsg }}</p>
     </form>
 </div>

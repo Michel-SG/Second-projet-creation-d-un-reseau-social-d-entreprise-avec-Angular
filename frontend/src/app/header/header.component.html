@@ -15,16 +15,16 @@
         <a class="nav-link" routerLink="auth/signup">Inscription</a>
       </li>
       <li class="nav-item" >
-        <a class="nav-link" routerLink="profile">Profile</a>
+        <a class="nav-link" routerLink="profile" *ngIf='isAuth'>Profile</a>
       </li>
       <li class="nav-item" >
-        <a class="nav-link" routerLink="forum">Forum</a>
+        <a class="nav-link" routerLink="forum" *ngIf='isAuth'>Forum</a>
       </li>
       <li class="nav-item" >
-        <a class="nav-link" routerLink="admin">Admin</a>  
+        <a class="nav-link" routerLink="admin" *ngIf='isAuth'>Admin</a>  
       </li>
       <li class="nav-item" >
-        <a class="nav-link" >Deconnection</a>  
+        <a class="nav-link cursor" (click)='onLogout()' *ngIf='isAuth'>Deconnection</a>  
       </li>
     </ul>
     
