@@ -1,6 +1,10 @@
 export class Users {
-    constructor(public pseudo: string,
+    constructor(public admin: number,
                 public email: string,
-                public metier: string
+                public id: number,
+                public level: number,
+                public metier: string,
+                public password: string,
+                public pseudo: string
                 ){}
 }

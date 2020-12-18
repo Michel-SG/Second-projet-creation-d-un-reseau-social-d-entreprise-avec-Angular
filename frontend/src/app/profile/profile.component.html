@@ -1,13 +1,16 @@
 <div class='container'>
-    <div id="profil">
-        <h2 class='text-center display-5 mt-4'>Mon profil</h2>
-        <ul class="list-group">
-            <li class="list-group-item">Pseudo: {{ pseudo }} </li>
-            <li class="list-group-item">Email: </li>
-            <li class="list-group-item">Fonction: </li>
+    <div id="profil" *ngIf="!loading ">
+        
+        <h2 class='text-center display-5 mt-4' >Mon profil</h2>
+        <ul class="list-group"  *ngFor = "let user of users"  >
+            <li class="list-group-item">pseudo: {{ user.pseudo }}  </li>
+            <li class="list-group-item">Email: {{ user.email }}</li>
+            <li class="list-group-item">Fonction: {{ user.metier }}</li>
             <li class="list-group-item">
                 <button type="button" class="btn btn-danger">Supprimer mon compte !</button> 
             </li> 
+            <p class="text-danger" *ngIf='errorMsg'>{{ errorMsg }}</p>
         </ul>    
     </div>
+    
 </div>
